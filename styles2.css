@@ -2,6 +2,32 @@
     box-sizing: border-box;
   }
   
+  
+    main, aside {
+
+    padding: 5px;
+    }
+    
+    main {
+    background: #fdffc2;
+    }
+    
+    aside {
+    background: #74776b;
+    section & display: flex;
+    flex-direction: column;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media all and (min-width: 480px) { 
+    section {
+      flex-direction: row;
+    }
+
+  }
   body {
     margin: 0;
     font-family: Arial, sans-serif;
