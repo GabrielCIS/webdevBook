@@ -1,0 +1,152 @@
+/* General reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Callout bar */
+.callout {
+    background-color: #f8c471;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #34495e;
+    padding: 10px 20px;
+    color: white;
+}
+
+.header .logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Full navigation menu */
+#fullmenu {
+    display: none;
+    align-items: center;
+}
+
+#fullmenu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#fullmenu ul li {
+    margin: 0 10px;
+}
+
+#fullmenu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Burger menu */
+#burgermenu {
+    display: none;
+}
+
+#burgermenu svg {
+    fill: white;
+    cursor: pointer;
+}
+
+#burgermenulinks {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #34495e;
+    list-style: none;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#burgermenulinks li {
+    margin: 10px 0;
+}
+
+#burgermenulinks a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* Signup button */
+.signup {
+    display: flex;
+    align-items: center;
+}
+
+.signup button {
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background-color: #d68910;
+}
+
+/* Section and table styling */
+section {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+main {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#hours {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#hours th, #hours td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#hours th {
+    background-color: #34495e;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #34495e;
+    color: white;
+    margin-top: 20px;
+}

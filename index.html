@@ -1,61 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Book Haven</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Bookstore</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
-    
+
 
 </head>
+
 <body>
-   <div class="callout">Free Shipping on orders over $25</div>
- 
-    <div class="menu-container">
-            <div class="logo">
-                <a href="/index.html">
-                <img src="/images/Logo_Name2.png" alt="Logo"> 
-                </a>
+    <!------ 
+    Client highlights
+    Shopping promos
+    Product/item images
+    Shopping perks
+    Categories of products
+    ----->
+    
+    <div class="callout">Free Shipping on orders over $25</div>
+    
+<!----------------------- Header ---------------------->
+    <header class="headercontainer">
+
+        <div id="burgermenu">
+            <button class="navbar"><i class="fa-solid fa-bars fa-xl"></i> 
+
+            <ul id="burgermenulinks">
+                <li><a href="index.html">Home</a></Li>
+                <li><a href="Gallery.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Community.html">Community</a></li>
+            </ul>
+            </button>
+            
+        </div>
+        <div class=logo>
+            
+            <a href="/index2.html"> <img src="/images/Logo_Name2.png" alt="Book store logo"> </a>
+            
+        </div>
+        <div id="mobileuser"> 
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-cart-shopping"></i>
+            <i class="fa-regular fa-circle-user fa-xl"></i>
+  
+
+        </div>
+
+            <div id="fullmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></Li>
+                    <li><a href="Gallery.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Community.html">Community</a></li>
+                    <li><i class="fa-regular fa-circle-user fa-xl"></i></li>
+                </ul>
+            </div>
+    </header>
+<!--------------Header END-------------->
+
+
+
+
+    
+    <section id = "maincontent">
+        <main>
+            <div class = "highlights">
+              <img src="/images/storytelling.jpg" alt="story telling">
+                <div class = "overlay-text">
+                  <h2>Shop Online at Book Haven</h2>
+                  <p>Whether you’re diving into a page-turning novel or exploring an inspiring memoir, we have something for everyone. </p>
+                  <button class="explore-button">Explore</button>
+                </div>
             </div>
 
-        <div class = "right-section">
-        <div class="menu">
-            <nav>
-                <ul>
-                    <li><a href=-"index.html">Home</a></li>
-                    <li><a href=-"gallery.html">Gallery</a></li>
-                    <li><a href=-"community.html">Community</a></li>
-                    <li><a href=-"aboutus.html">About Us</a></li>
-                </ul>
-            </nav>
+            <section class="promo-section">
+                <div class="promo-box">
+                    <div class="promo">
+                        <h3>New Years Sale </h3>
+                        <h2>25% Off</h2>
+                        <p>ALL accessories now through the end of the month</p>
+                    </div>
+                  </div>
+            </section>
+
+            <section class="shop-here-section">
+                <div class="perk-box">
+                    <div class="perk">
+                      <h3>Your Bookstore</h3>
+                      <p>Book Haven Bookstore is a local treasure for book enthusiasts.</p>
+                    </div>
+                    <div class="perk">
+                      <h3>Love You</h3>
+                      <p>A deep-rooted commitment to fostering literary exploration and a love for reading.</p>
+                    </div>
+                    <div class="perk">
+                      <h3>Everything You Neeed</h3>
+                      <p>High-quality reading materials and office essentials.</p>
+                    </div>
+                  </div>
+            </section>
+        <br> </main>
+    </section>
+    <section class="promo-section">
+      <div class="promo-box">
+          <div class="promo">
+            <h3>Clearance Items</h3>
+            <h2>50% Off</h2>
+            <p >Up to 50% off clearance books and magazines while supplies last.</p>
+          </div>
+          
         </div>
-        <div class="signup">
-            <a href="login.html">
-            <button>LOGIN</button>
-            <i class="fa-regular fa-circle-user fa-xl"></i>
-            </a>
-        </div>        
+  </section>
+
+    <section class="item-section">
+      <div class="item-box">
+          <div class="item">
+            <img src="/images/Client3_Book1.png" alt="story telling">
+          </div>
+          <div class="item-description">
+            <h3>BRIE MINE 4EVER</h3>
+            <p>A book for cheese lovers.</p>
+            <button id="shop-button">Shop Now</button>
+          </div>
+          
         </div>
-    </div>
+  </section>
+
+
+    <section class="category-section">
+       <h2>   Shop Our Category</h2>
+      
+        <div class="categories">
+          <div>Fiction Books</div>
+          <div>Journals</div>
+          <div>Non-Fiction Books</div>
+          <div>Office Supplies</div>
+          <div>Self-Help</div>
+          <div>Magazines</div>
+        </div>
+        
+      </section>
+
+
+<!-----------Footer------------------------->
+<footer>
     
-    <section>
-    Section
-    <main>Main</main>
-    <aside>Aside</aside>
-    </section>
+    <div class="newsletter-section">
+      <div class="left-half">
+        <h2>Sign up for our Newsletter</h2>
+        <input type="email" placeholder="Your email" id="subscribe" required>
+        <button id="subscribe-button">Subscribe</button>
+      </div>
 
-    <section class="shop-here-section">
-        <h2>Why shop here…</h2>
-        <div class="flex-container">
-            <div class="perk">value / perk</div>
-            <div class="perk">value / perk</div>
-            <div class="perk">value / perk</div>
-        </div>
-    </section>
+      <div class="right-half">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
 
+    
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About Us</a>
+      <a href="community.html">Community</a>
+    </div>
+  </footer>
 
-    <footer>Footer</footer>
-   
 </body>
+
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE htmL>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Book store - About Us</title>
+    <Link href="styles2.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class=logo>
+            <a href="/index2.html"> <img src="/images/Logo_Name2.png" alt="Book store logo"> </a>
+        </div>
+    </header>
+    <nav>
+        <div id="fullmenu">
+            <div class = "right-section"></div>
+            <ul>
+                <li><a href="index.html">Home</a></Li>
+                <li><a href="Gallery.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Community.html">Community</a></li>
+            </ul>
+            </div>
+        </div>
+        <div id="burgermenu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="2.0em" viewBox="0 0 448 512">
+                <path
+                    d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+            </svg>
+            <ul id="burgermenulinks">
+                <li><a href="index.html">Home</a></Li>
+                <li><a href="Gallery.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Community.html">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>About Us</h1>
+        <hr>
+        <p> We believe in celebrating the written word, creating an inviting digital space that encourages literary
+            discovery, and supporting intellectual growth.</p>
+        <h1>Contact Us </h1>
+        <hr>
+        <fieldset>
+            <formaction="" method="post" id="contactusform">
+                <label> Reason for communication:
+                    <select name="commenttype">
+                        <optgroup label="Feedback">
+                            <option value="comment">Comment</option>
+                            <option value="compliment">Compliment</option>
+                            <option value="complaint">Complaint</option>
+                        </optgroup>
+                        <optgroup Label=Other">
+                            <option value="Customer Order">Catering</option>
+                        </optgroup>
+                    </select>
+                    </select>
+                </label><br>
+
+                <label>First Name: <input type="text" name="fname" required>
+                </Label><br>
+                <label>Last Name: <input type="text" name="Lname" required>
+                </label><br>
+                <Label>Phone: <input type="tel" name="phone">
+                </Label><br>
+                <label>Email: <input type="email" name="email" required>
+                </Label><br>
+                <label>Comments:<br>
+                    <textarea name="comments" rows="4" cols="50">
+            </textarea>
+                </label><br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+
+        </fieldset>
+        </form>
+    </main>
+    <footer></footer>
+</body>
