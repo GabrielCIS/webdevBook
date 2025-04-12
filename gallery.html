@@ -16,44 +16,8 @@
     <div class="callout">Free Shipping on orders over $25</div>
     
 <!----------------------- Header ---------------------->
-    <header class="headercontainer">
+<div id="header"></div>
 
-        <div id="burgermenu">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
-                <path
-                    d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
-            </svg>
-            <ul id="burgermenulinks">
-                <li><a href="index.html">Home</a></Li>
-                <li><a href="Gallery.html">Menu</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="Community.html">Community</a></li>
-            </ul>
-            
-        </div>
-        <div class=logo>
-            
-            <a href="/index2.html"> <img src="/images/Logo_Name2.png" alt="Book store logo"> </a>
-            
-        </div>
-        <div id="mobileuser"> 
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-regular fa-cart-shopping"></i>
-            <i class="fa-regular fa-circle-user fa-xl"></i>
-  
-
-        </div>
-
-            <div id="fullmenu">
-                <ul>
-                    <li><a href="index.html">Home</a></Li>
-                    <li><a href="Gallery.html">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="Community.html">Community</a></li>
-                    <li><i class="fa-regular fa-circle-user fa-xl"></i></li>
-                </ul>
-            </div>
-    </header>
 <!--------------Header END-------------->
 
     <nav></nav>
@@ -76,55 +40,20 @@
 
 
 <!-----------Footer------------------------->
-    <footer class = "footercontainer">
-        <div id="ftmlinks">
-            <formaction="" method="post" id="contactusform">
-                <label class="signup">ENews! <input type="email" name="email"  placeholder="Email" required>
-                    <button >Sign Up!</button>
-            <ul>
-                <li><a href="index.html">Privacy Policy</a></li>
-                <li><a href="Gallery.html">Terms of Service </a></li>
-                <li><a href="about.html">Cookie Preferences</a></li>
-                <li><a href="Community.html">Advertisements</a></li>
-            </ul>
-        <div id="Msocialmediaicons">
-            <ul>
-                <li><i class="fa-brands fa-facebook " ></i></li>
-                <li><i class="fa-brands fa-instagram "></i></li>
-                <li><i class="fa-brands fa-twitter"></i></li>
-                <li><i class="fa-brands fa-youtube"></i> </li>
-            </ul>
-        </div>
-        </div>
-        <div id="ftflinks">
-            <br>
-            <formaction="" method="post" id="contactusform">
-                <label class="signup">Get Updates <input type="email" name="email" placeholder="Email" required>
-                <button >Sign Up!</button>
-            <ul>
-                <li><a href="index.html">Terms of Service </a></li>
-                    <li><a href="Gallery.html">Avertisements </a></li>
-                    <li><a href="about.html">Link5</a></li>
-                    <li><a href="Community.html">Link7</a></li>
-                    
-            
-            </ul>
-            <ul>
-                <li><a href="index.html">Privacy Policy</a></li>
-                    <li><a href="Gallery.html">Cookie Preferences</a></li>
-                    <li><a href="about.html">Link6</a></li>
-                    <li><a href="Community.html">Link8</a></li>
-            
-            </ul>
-            <ul>
-                <li><i class="fa-brands fa-facebook"></i></li>
-                <li><i class="fa-brands fa-instagram"></i></li>
-                <li><i class="fa-brands fa-twitter"></i></li>
-                <li><i class="fa-brands fa-youtube"></i> </li>
-            </ul>
-        </div>
-    
-    </footer>
+<div id="footer"></div>
+
+
+<script>
+  // Load header
+  fetch('/header.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('header').innerHTML = html);
+
+  // Load footer
+  fetch('/footer.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('footer').innerHTML = html);
+</script>
 
 </body>
 
