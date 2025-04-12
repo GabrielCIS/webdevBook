@@ -23,8 +23,9 @@
     <div class="callout">Free Shipping on orders over $25</div>
     
 <!----------------------- Header ---------------------->
-<div id="header"></div>
 
+<div id="header"></div>
+    
 <!--------------Header END-------------->
 
 
@@ -117,16 +118,15 @@
 
 <script>
   // Load header
-  fetch('/header.html')
+  fetch('header.html')
     .then(res => res.text())
     .then(html => document.getElementById('header').innerHTML = html);
 
   // Load footer
-  fetch('/footer.html')
+  fetch('footer.html')
     .then(res => res.text())
     .then(html => document.getElementById('footer').innerHTML = html);
 </script>
-
 </body>
 
 </html>
