@@ -16,6 +16,10 @@ html, body {
 button, a {
   -webkit-appearance: none; /* Fix button behavior */
 }
+p,h1 {
+  margin: 8px;
+  padding: 0px;
+}
 
 /*Top banner*/
 .callout {
@@ -86,13 +90,14 @@ a:hover .fa-brands {
 }
 
 #hours {
-  width: 275px;
+  width: 100%;
   border: 1px solid black;
 }
 
 #hours th, #hours td { 
-border: 1px solid black;
-}
+  font-size: 18px;
+  border: 0px solid black;
+} 
 
 
 /* logo */
@@ -561,7 +566,50 @@ footer {
 	color: #303030;
 }
 
+/*book stuff*/
+.book-wrapper {
+  
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  font-family: 'Georgia', serif;
+}
 
+.book {
+  display: flex;
+  flex-direction: column; /* Default: mobile stacked view */
+}
+
+/* Individual page styles */
+.page {
+  background: #fffef9;
+  padding: 2rem;
+  line-height: 1.6;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+main, aside {
+  padding: 10px;
+}
+aside {
+  margin-top: 50px;
+  width: 100%;
+}
+
+aside h3 {
+  background-color: #3F5461;
+  color: white;
+  font-size: 25px;
+}
 @media all and (min-width: 768px) { 
   section {
     flex-direction: row;
@@ -613,5 +661,43 @@ footer {
     padding: 70px 70px 0px 70px;
   
   }
+  
+  /* book stuff */
+  .book::before {
+    content: "";
+    display: block;
+    width: 2px;
+    background: #888;
+    margin: 0 1px;
+  }
 
+  .book-wrapper {
+    padding: 0; /* or maybe 0.5rem for a little breathing room */
+  }
+  .book {
+    flex-direction: row;
+    gap: 0;
+  }
+  .left-page, .right-page {
+    width: 300px;
+    
+  }
+  .left-page {
+    border-right: 1px solid #ddd;
+    box-shadow:
+      inset -10px 0 10px -10px rgba(0, 0, 0, 0.2),
+      5px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .right-page {
+    border-left: 1px solid #ddd;
+    box-shadow:
+      inset 10px 0 10px -10px rgba(0, 0, 0, 0.2),
+      5px 5px 15px rgba(0, 0, 0, 0.1);
+  }
 }
+
+
+
+
+
