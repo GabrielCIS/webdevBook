@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -9,9 +11,12 @@
     <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
 
 
-</head>
 
-<body>
+
+  
+  
+</head>
+<body class="g-body">
     
     <div class="callout">Free Shipping on orders over $25</div>
     
@@ -20,24 +25,42 @@
 
 <!--------------Header END-------------->
 
-    <nav></nav>
-    <section>
-        Section
-        <main>
-            Main
-        </main>
-        <aside>A
-            <section class="shop-here-section">
-                <h2>Why shop here…</h2>
-                <div class="flex-container">
-                    <div class="perk">value / perk</div>
-                    <div class="perk">value / perk</div>
-                    <div class="perk">value / perk</div>
-                </div>
-            </section>
-        </aside>
-    </section>
-
+<br />
+  <table class="g-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Image"><img src="/images/Client3_Magazine1.png" alt="Magazine 1"></td>
+        <td data-label="Item" style = "width: 100px;">Ball Magazine</td>
+        <td data-label="Description">Ball Magazine - Is the world in a Pickle?</td>
+        <td data-label="Price">$9.99</td>
+        <td data-label="Action"><button class="add-to-cart">Add to Cart</button></td>
+      </tr>
+      <tr>
+        <td data-label="Image"><img src="/images/Client3_Magazine2.png" alt="Magazine 2"></td>
+        <td data-label="Item" style = "width: 100px;">Travel Magazine</td>
+        <td data-label="Description">Travel Magazine - Top Ten Places to Travel</td>
+        <td data-label="Price">$12.99</td>
+        <td data-label="Action"><button class="add-to-cart">Add to Cart</button></td>
+      </tr>
+      <tr>
+        <td data-label="Image"><img src="/images/Client3_Magazine3.png" alt="Magazine 3"></td>
+        <td data-label="Item" style = "width: 100px;">Eat. Magazine</td>
+        <td data-label="Description">Eat. Magazine - The Breakfast Issue</td>
+        <td data-label="Price">$10.99</td>
+        <td data-label="Action"><button class="add-to-cart">Add to Cart</button></td>
+      </tr>
+   
+    </tbody>
+  </table>
 
 <!-----------Footer------------------------->
 <div id="footer"></div>
@@ -55,6 +78,7 @@
     .then(html => document.getElementById('footer').innerHTML = html);
 </script>
 
-</body>
 
-</html>
+
+
+</body></html>

@@ -89,15 +89,49 @@ a:hover .fa-brands {
   
 }
 
-#hours {
+#contact {
   width: 100%;
   border: 1px solid black;
+
 }
 
-#hours th, #hours td { 
+#contact th, #contact td { 
   font-size: 18px;
   border: 0px solid black;
+  text-align: left;
 } 
+
+#contact #contact-title {
+  text-align: center;
+  background-color: #742C36; 
+  color: white; 
+  width: 100%;
+}
+
+.form-container {
+  
+  width: 100%
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 
 
 /* logo */
@@ -124,6 +158,27 @@ fieldset {
     padding: 20px;
     background-color: #fdfdfd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*gallery*/
+
+
+
+.btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.desc {
+  max-width: 300px;
 }
 
 /*menus*/
@@ -419,9 +474,6 @@ textarea {
 
 
 
-
-
-
 .item-section {
   background-color: #f7f7f7;
   padding: 20px;
@@ -610,6 +662,78 @@ aside h3 {
   color: white;
   font-size: 25px;
 }
+
+.g-body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.g-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.g-table thead {
+  display: none;
+}
+
+.g-table,
+.g-table tbody,
+.g-table tr,
+.g-table td {
+  display: block;
+  width: 100%;
+}
+
+.g-table tr {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  
+}
+
+.g-table td {
+  padding: 6px 10px;
+  position: relative;
+}
+
+.g-table td::before {
+  content: attr(data-label);
+  font-weight: bold;
+  display: block;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.g-table img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+}
+
+  
+
+
+/*big screen stuff*/
 @media all and (min-width: 768px) { 
   section {
     flex-direction: row;
@@ -695,8 +819,72 @@ aside h3 {
       inset 10px 0 10px -10px rgba(0, 0, 0, 0.2),
       5px 5px 15px rgba(0, 0, 0, 0.1);
   }
+  .g-table {
+    width: 90%;
+    /* max-width: 800px;   or whatever max you prefer */
+    margin: 0 auto;
+  }
+
+  .g-table thead {
+    display: table-header-group;
+  }
+
+  .g-table tbody {
+    display: table-row-group;
+    font-size: 25px;
+  }
+
+  .g-table tr {
+    display: table-row;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+
+  .g-table td,
+  .g-table th {
+    display: table-cell;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .g-table td::before {
+    display: none;
+  }
+
+  .add-to-cart {
+    width: auto;
+    padding: 8px 16px;
+    white-space: nowrap;
+  }
+
+  .g-table img {
+    max-width: 150%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .g-table td:first-child {
+    width: 130px; 
+    padding: 8px;
+    vertical-align: middle;
+  }
+  .g-table td:second-child {
+   width: 100px; 
+   padding: 40px;
+   vertical-align: middle;
+   
+  }
+  .g-body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    background-color: #f9f9f9;
+
+  }
 }
 
+/*end big screen stuff*/
 
 
 
