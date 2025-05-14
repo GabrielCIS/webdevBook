@@ -13,6 +13,15 @@
 
 <body>
     
+    <div class="callout">Free Shipping on orders over $25</div>
+    
+<!----------------------- Header ---------------------->
+<div id="header"></div>
+
+<!--------------Header END-------------->
+
+<body>
+    
     
     <div id="header"></div>
 
@@ -62,20 +71,25 @@
                 <div class="form-container">
                     
                     <form action="" method="post" id="contactusform">
+                        <p>Use this form to contact us to provide feedback or request a customer order</p>
+
                         <div class="form-group">
+                            <Label>Feedback Type:  </Label>
+                                <select name="type" id="type" required>
+                                    <option value="">Please choose an option</option>
+                                    <option value="Feedback">Feedback</option>
+                                    <option value="Custom">Custom Order</option>
+                                  </select>
+                                  <br>
                             <Label>Full Name: <input type="text" name="fname"></Label><br>
-                        </div>
-                        <div class="form-group">
-                            <Label>Phone: <input type="tel" name="phone"></Label><br>
-                        </div>
-                        <div class="form-group">
-                            <label>Email:<input type="email" name="email" required></label><br>
-                        </div>
-                        <div class="form-group">    
-                            <label>Order Number:<input type="text" name="order" required></label><br>
-                        </div>
-                        <div class="form-group">    
-                            <label>Feedback:<input type="textarea" name="feedback" required></label><br>
+                            <Label>Phone: 
+                                <input type="tel" name="phone"></Label><br>
+                            <label>Email:
+                                <input type="email" name="email" required></label><br>
+                            <label>Order Number:
+                                <input type="text" name="order" ></label><br>
+                            <label>Details:
+                                <input type="text" name="feedback" rows="5" cols="15" required ></label><br>
                         </div>
                             <input type="submit" value="Submit">
                             <input type="reset" value="Clear">

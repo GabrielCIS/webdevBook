@@ -218,12 +218,12 @@ fieldset {
 	color: #303030;
 	}
 
+  #fullmenu ul li a:hover {
+    background-color: #585917;
+    color: White
+    
+  }
 
-#fullmenu ul li a:hover {
-  background-color: #585917;
-  color: White
-  
-}
 
 
 /*mobile menu*/
@@ -287,12 +287,18 @@ fieldset {
   align-self: center;
 }
 
-.navbar a,
-.navbar a:hover,
-.navbar-list a:hover {
-  /* Change the background color on hover */
-  background-color: #eba27a;
-  color: #fff;
+
+
+/* Default state */
+.navbar a {
+  color: black; /* or white, depending on your design */
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* Hover state: orange text */
+.navbar a:hover {
+  color: orange;
 }
 
 .navbar {
@@ -387,6 +393,19 @@ textarea {
  
 }
 
+.signup-button {
+
+  background-color: #3F5461;
+  color: white;
+  padding: 10px;
+  /* Smaller padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25%;
+  -webkit-text-stroke:0px white;
+}
+
 .shop-here-section {
   background-color: #f7f7f7;
   padding: 20px;
@@ -439,6 +458,18 @@ textarea {
 }
 
 .promo {
+  background-color: #742C36;
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: top;
+  width: 95%;
+  
+}
+
+.club {
   background-color: #742C36;
   padding: 10px;
   margin: 2px;
