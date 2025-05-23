@@ -53,6 +53,52 @@ p,h1 {
   align-items: center;
 }
 
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+#cart-button {
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.cart-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-width: 150px;
+}
+
+.cart-options.show {
+  display: block;
+}
+
+.cart-options button {
+  display: block;
+  width: 100%;
+  margin: 0.25rem 0;
+  padding: 8px;
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-options button:hover {
+  background-color: #ddd;
+}
+
 
 
 .signup button:hover {
