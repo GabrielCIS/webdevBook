@@ -13,13 +13,7 @@
 </head>
 
 <body>
-    <!------ 
-    Client highlights
-    Shopping promos
-    Product/item images
-    Shopping perks
-    Categories of products
-    ----->
+ 
     
     <div class="callout">Free Shipping on orders over $25</div>
     
@@ -30,6 +24,8 @@
 
 
 <br />
+
+
   <table class="g-table">
     <thead>
       <tr>
@@ -40,7 +36,9 @@
         <th>Action</th>
       </tr>
     </thead>
+
     <tbody>
+
       <tr>
         <td data-label="Image"><img src="/images/Client3_Magazine1.png" alt="Magazine 1"></td>
         <td data-label="Item" style = "width: 100px;">Ball Magazine</td>
@@ -65,24 +63,48 @@
    
     </tbody>
   </table>
+<br />
+  <table style="width: 95%;">
+    <tbody>
+      <tr>
+        <td colspan="2" style="text-align: right;">
+          <button id="clear-cart" class="add-to-cart">Clear Cart</button>&nbsp;
+          <button id="process-cart" class="add-to-cart">Check Out</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <script>
+    function clearCart() {
+      alert("Cart Cleared!");
+    }
+    document.getElementById("clear-cart").addEventListener("click", clearCart);
+  
+    function processCart() {
+      alert("Cart processed!");
+    }
+    document.getElementById("process-cart").addEventListener("click", processCart);
+  </script>
 
 <!-----------Footer------------------------->
 <div id="footer"></div>
 
 
-<script>
-  // Load header
+<script type="module">
+  // Load header and attach its script
   fetch('/header.html')
     .then(res => res.text())
-    .then(html => document.getElementById('header').innerHTML = html);
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+      import('/header.js');
+    });
 
-  // Load footer
+  // Load footer and attach its script
   fetch('/footer.html')
     .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+      import('/footer.js');
+    });
 </script>
-
-
-
-
-</body></html>
