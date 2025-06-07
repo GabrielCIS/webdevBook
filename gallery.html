@@ -46,92 +46,111 @@
         <td data-label="Item" style = "width: 100px;">Ball Magazine</td>
         <td data-label="Description">Ball Magazine - Is the world in a Pickle?</td>
         <td data-label="Price">$9.99</td>
-        <td data-label="Action"><button id = "addtocart" class="add-to-cart">Add to Cart</button></td>
+        <td data-label="Action"><button class="add-to-cart" data-item="Ball Magazine">Add to Cart</button></td>
       </tr>
       <tr>
         <td data-label="Image"><img src="/images/Client3_Magazine2.png" alt="Magazine 2"></td>
         <td data-label="Item" style = "width: 100px;">Travel Magazine</td>
         <td data-label="Description">Travel Magazine - Top Ten Places to Travel</td>
         <td data-label="Price">$12.99</td>
-        <td data-label="Action"><button id = "addtocart" class="add-to-cart">Add to Cart</button></td>
+        <td data-label="Action"><button  class="add-to-cart" data-item="Travel Magazine">Add to Cart</button></td>
       </tr>
       <tr>
         <td data-label="Image"><img src="/images/Client3_Magazine3.png" alt="Magazine 3"></td>
         <td data-label="Item" style = "width: 100px;">Eat. Magazine</td>
         <td data-label="Description">Eat. Magazine - The Breakfast Issue</td>
         <td data-label="Price">$10.99</td>
-        <td data-label="Action"><button id = "addtocart" class="add-to-cart">Add to Cart</button></td>
+        <td data-label="Action"><button  class="add-to-cart" data-item="Eat. Magazine">Add to Cart</button></td>
       </tr>
    
     </tbody>
   </table>
 <br />
-  <table style="width: 95%;">
-    <tbody>
-      <tr>
-        <td colspan="2" style="text-align: right;">
-          <button id="clear-cart" class="add-to-cart">Clear Cart</button>&nbsp;
-          <button id="process-cart" class="add-to-cart">Check Out</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div id="cart-modal" class="modal">
-      
-    <div class="modal-content">
-      <span class="close" id="close-cart-modal">×</span>
-      <h3>Your Cart</h3>
-      <br>
-      <ul id="cart-items"></ul>
-      <br>
-      <br>
-      <button id="clear-cart-button" class="cart-button">Clear Cart</button>
-      <button id="process-order-button" class="cart-button">Process Order</button>
-    </div>
+<table style="width: 95%;">
+  <tbody>
+
+    <tr>
+      <td colspan="2" style="text-align: right;">
+        <button id="open-cart-from-gallery" class="add-to-cart">Check Out</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 </div>
 
 
-  <script>
-    function clearCart() {
-      alert("Cart Cleared!");
-    }
-    document.getElementById("clear-cart").addEventListener("click", clearCart);
-  
-    function processCart() {
-      alert("Cart processed!");
-    }
-    document.getElementById("process-cart").addEventListener("click", processCart);
 
-    function addtoCart() {
-      alert("Item Added");
-    }
-    document.getElementById("addtocart").addEventListener("click", addtoCart);
-
-  </script>
 
 <!-----------Footer------------------------->
 <div id="footer"></div>
 
 
 <script type="module">
-  // Load header and attach its script
-  fetch('/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      import('/header.js');
+  async function loadHeaderAndFooter() {
+    // Load HEADER
+    const headerRes = await fetch('/header.html');
+    const headerHtml = await headerRes.text();
+    document.getElementById('header').innerHTML = headerHtml;
+
+    // Wait for DOM update
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+
+    // Load header script
+    const headerModule = await import('/header.js');
+    if (headerModule?.initHeader) {
+      headerModule.initHeader();
+    }
+
+    // Wait until modal + global cart function exists
+    await new Promise(resolve => {
+      const check = () => {
+        if (document.getElementById("cart-modal") && typeof window.openCartModal === "function") {
+          resolve();
+        } else {
+          requestAnimationFrame(check);
+        }
+      };
+      check();
     });
 
-  // Load footer and attach its script
-  fetch('/footer.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('footer').innerHTML = html;
-    // Now that the DOM is updated, import and initialize footer logic
-    import('/footer.js').then(module => {
-      if (module && typeof module.initFooter === 'function') {
-        module.initFooter(); // Call exported function to initialize behavior
-      }
+    // Hook up gallery checkout button
+    const galleryBtn = document.getElementById("open-cart-from-gallery");
+    if (galleryBtn) {
+      galleryBtn.addEventListener("click", window.openCartModal);
+    }
+
+    // Attach listeners to "Add to Cart" buttons
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.getAttribute("data-item");
+        if (item) addToCart(item);
+      });
     });
-  });
+
+    // Load FOOTER
+    const footerRes = await fetch('/footer.html');
+    const footerHtml = await footerRes.text();
+    document.getElementById('footer').innerHTML = footerHtml;
+
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+
+    const footerModule = await import('/footer.js');
+    if (footerModule?.initFooter) {
+      footerModule.initFooter();
+    }
+  }
+
+  // Global addToCart function
+  function addToCart(itemName) {
+    if (!window.cartItems) window.cartItems = [];
+    window.cartItems.push(itemName);
+    sessionStorage.setItem("cartItems", JSON.stringify(window.cartItems));
+
+    // Optional: show feedback
+    alert(`Added to cart: ${itemName}`);
+  }
+
+  loadHeaderAndFooter();
 </script>
