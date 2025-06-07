@@ -21,3 +21,9 @@ document.getElementById('process-order').addEventListener('click', () => {
   alert('Processing order...');
   // Add order-processing logic here
 });
+
+
+    
+
+        document.getElementById("subscribe-button").addEventListener("click", () => {
+          alert('subscribed');

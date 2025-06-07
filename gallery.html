@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
+    <script src="scripts/script.js" defer></script>
+
 
 
 </head>
@@ -44,21 +46,21 @@
         <td data-label="Item" style = "width: 100px;">Ball Magazine</td>
         <td data-label="Description">Ball Magazine - Is the world in a Pickle?</td>
         <td data-label="Price">$9.99</td>
-        <td data-label="Action"><button class="add-to-cart">Add to Cart</button></td>
+        <td data-label="Action"><button id = "addtocart" class="add-to-cart">Add to Cart</button></td>
       </tr>
       <tr>
         <td data-label="Image"><img src="/images/Client3_Magazine2.png" alt="Magazine 2"></td>
         <td data-label="Item" style = "width: 100px;">Travel Magazine</td>
         <td data-label="Description">Travel Magazine - Top Ten Places to Travel</td>
         <td data-label="Price">$12.99</td>
-        <td data-label="Action"><button class="add-to-cart">Add to Cart</button></td>
+        <td data-label="Action"><button id = "addtocart" class="add-to-cart">Add to Cart</button></td>
       </tr>
       <tr>
         <td data-label="Image"><img src="/images/Client3_Magazine3.png" alt="Magazine 3"></td>
         <td data-label="Item" style = "width: 100px;">Eat. Magazine</td>
         <td data-label="Description">Eat. Magazine - The Breakfast Issue</td>
         <td data-label="Price">$10.99</td>
-        <td data-label="Action"><button class="add-to-cart">Add to Cart</button></td>
+        <td data-label="Action"><button id = "addtocart" class="add-to-cart">Add to Cart</button></td>
       </tr>
    
     </tbody>
@@ -74,7 +76,21 @@
       </tr>
     </tbody>
   </table>
-  
+  <div id="cart-modal" class="modal">
+      
+    <div class="modal-content">
+      <span class="close" id="close-cart-modal">×</span>
+      <h3>Your Cart</h3>
+      <br>
+      <ul id="cart-items"></ul>
+      <br>
+      <br>
+      <button id="clear-cart-button" class="cart-button">Clear Cart</button>
+      <button id="process-order-button" class="cart-button">Process Order</button>
+    </div>
+</div>
+
+
   <script>
     function clearCart() {
       alert("Cart Cleared!");
@@ -85,6 +101,12 @@
       alert("Cart processed!");
     }
     document.getElementById("process-cart").addEventListener("click", processCart);
+
+    function addtoCart() {
+      alert("Item Added");
+    }
+    document.getElementById("addtocart").addEventListener("click", addtoCart);
+
   </script>
 
 <!-----------Footer------------------------->
@@ -102,9 +124,14 @@
 
   // Load footer and attach its script
   fetch('/footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer').innerHTML = html;
-      import('/footer.js');
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('footer').innerHTML = html;
+    // Now that the DOM is updated, import and initialize footer logic
+    import('/footer.js').then(module => {
+      if (module && typeof module.initFooter === 'function') {
+        module.initFooter(); // Call exported function to initialize behavior
+      }
     });
+  });
 </script>

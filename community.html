@@ -59,16 +59,22 @@
 <div id="footer"></div>
 
 
-<script>
-  // Load header
+<script type="module">
+  // Load header and attach its script
   fetch('/header.html')
     .then(res => res.text())
-    .then(html => document.getElementById('header').innerHTML = html);
+    .then(html => {
+      document.getElementById('header').innerHTML = html;
+      import('/header.js');
+    });
 
-  // Load footer
+  // Load footer and attach its script
   fetch('/footer.html')
     .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+      import('/footer.js');
+    });
 </script>
 
 </body>

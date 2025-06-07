@@ -6,16 +6,13 @@
     <div class="newsletter-section">
       <div class="left-half">
         <h2>Sign up for our Newsletter</h2>
-        <input type="email" placeholder="Your email" id="subscribe" required>
-        <button id="subscribe-button">Subscribe</button>
-        <script>
-          function myFunction()
-          {  alert("Thank you for subscribing!");  }
+        <form id="subscribe-form">
+          <input type="email" placeholder="Your email" id="subscribe" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        
        
-          let button = document.getElementById("subscribe-button");
-          button.addEventListener("click", myFunction );
-          </script>
-      </div>
+
 
       <div class="right-half">
         <a href="#"><i class="fa-brands fa-facebook"></i></a>
