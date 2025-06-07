@@ -18,6 +18,7 @@ body {
 button,
 a {
   -webkit-appearance: none;
+  appearance: none;
   /* Fix button behavior */
 }
 
