@@ -2,80 +2,79 @@
 <html>
 
 <head>
-    <title>Bookstore</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
+  <title>Bookstore</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
 
 
 </head>
 
 <body>
-    
-    <div class="callout">Free Shipping on orders over $25</div>
-    
-<!----------------------- Header ---------------------->
-<div id="header"></div>
 
-<!--------------Header END-------------->
+  <!----------------------- Header ---------------------->
+  <div id="header"></div>
 
-<section id = "maincontent">
+  <!--------------Header END-------------->
+
+
+  <section id="maincontent">
     <main>
-        <section class="promo-section">
-            <div class="promo-box">
-                <div class="promo">
-                    <h3>Join Us Every Friday </h3>
-                    <h2>Book Haven Book Club</h2>
-                    <p>7pm in the coffee shop</p>
-                </div>
-            </div>
-        </section>
+      <section class="promo-section">
+        <div class="promo-box">
+          <div class="promo">
+            <h3>Join Us Every Friday </h3>
+            <h2>Book Haven Book Club</h2>
+            <p>7pm in the coffee shop</p>
+          </div>
+        </div>
+      </section>
     </main>
 
-        <aside>
-            <section class="shop-here-section">
-                <h3>Vote For Your Favorite Book</h3>
-                <div class="flex-container">
-                    <div class="perk">The Emperor of Gladness <i class="fa-regular fa-thumbs-up"></i></div>
-                    <div class="perk">Book 2 <i class="fa-regular fa-thumbs-up"></i></div>
-                    <div class="perk">Book 3 <i class="fa-regular fa-thumbs-up"></i></div>
-                </div>
-            </section>
-        </aside>
-    </section>
-<section class="promo-section">
-  <div class="promo-box">
+    <aside>
+      <section class="shop-here-section">
+        <h3>Vote For Your Favorite Book</h3>
+        <div class="flex-container">
+          <div class="perk">The Emperor of Gladness <i class="fa-regular fa-thumbs-up"></i></div>
+          <div class="perk">Book 2 <i class="fa-regular fa-thumbs-up"></i></div>
+          <div class="perk">Book 3 <i class="fa-regular fa-thumbs-up"></i></div>
+        </div>
+      </section>
+    </aside>
+  </section>
+  <section class="promo-section">
+    <div class="promo-box">
       <div class="promo">
         <h3>Attention Kids!</h3>
         <h2>Monthly Book Readings</h2>
-        <p ><button class="signup-button">Sign Up</button></p>
+        <p><button class="signup-button">Sign Up</button></p>
       </div>
-      
+
     </div>
-</section>
+  </section>
 
-<!-----------Footer------------------------->
-<div id="footer"></div>
+  <!-----------Header/Footer------------------------->
+  <div id="footer"></div>
 
 
-<script type="module">
-  // Load header and attach its script
-  fetch('/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      import('/header.js');
-    });
+  <script type="module">
+    // Load header and attach its script
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+        import('/scripts/header.js');
+      });
 
-  // Load footer and attach its script
-  fetch('/footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer').innerHTML = html;
-      import('/footer.js');
-    });
-</script>
+    // Load footer and attach its script
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+        import('/scripts/footer.js');
+      });
+  </script>
 
 </body>
 

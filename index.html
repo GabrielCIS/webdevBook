@@ -2,142 +2,131 @@
 <html>
 
 <head>
-    <title>Bookstore</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
+  <title>Bookstore</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
 
 
 </head>
 
 <body>
-    <!------ 
-    Client highlights
-    Shopping promos
-    Product/item images
-    Shopping perks
-    Categories of products
-    ----->
-    
-    <div class="callout">Free Shipping on orders over $25</div>
-    
-<!----------------------- Header ---------------------->
-<div id="header"></div>
-
-<!--------------Header END-------------->
-
-
-
-
-    
-    <section id = "maincontent">
-        <main>
-            <div class = "highlights">
-              <img src="/images/storytelling.jpg" alt="story telling">
-                <div class = "overlay-text">
-                  <h2>Shop Online at Book Haven</h2>
-                  <p>Whether you’re diving into a page-turning novel or exploring an inspiring memoir, we have something for everyone. </p>
-                  <button class="explore-button">Explore</button>
-                </div>
-            </div>
-
-            <section class="promo-section">
-                <div class="promo-box">
-                    <div class="promo">
-                        <h3>New Years Sale </h3>
-                        <h2>25% Off</h2>
-                        <p>ALL accessories now through the end of the month</p>
-                    </div>
-                  </div>
-            </section>
-
-            <section class="shop-here-section">
-                <div class="perk-box">
-                    <div class="perk">
-                      <h3>Your Bookstore</h3>
-                      <p>Book Haven Bookstore is a local treasure for book enthusiasts.</p>
-                    </div>
-                    <div class="perk">
-                      <h3>Love You</h3>
-                      <p>A deep-rooted commitment to fostering literary exploration and a love for reading.</p>
-                    </div>
-                    <div class="perk">
-                      <h3>Everything You Neeed</h3>
-                      <p>High-quality reading materials and office essentials.</p>
-                    </div>
-                  </div>
-            </section>
-        <br> </main>
-    </section>
-    <section class="promo-section">
-      <div class="promo-box">
-          <div class="promo">
-            <h3>Clearance Items</h3>
-            <h2>50% Off</h2>
-            <p >Up to 50% off clearance books and magazines while supplies last.</p>
-          </div>
-          
-        </div>
-  </section>
-
-    <section class="item-section">
-      <div class="item-box">
-          <div class="item">
-            <img src="/images/Client3_Book1.png" alt="story telling">
-          </div>
-          <div class="item-description">
-            <h3>BRIE MINE 4EVER</h3>
-            <p>A book for cheese lovers.</p>
-            <button id="shop-button">Shop Now</button>
-          </div>
-          
-        </div>
-  </section>
-
-
-    <section class="category-section">
-       <h2>   Shop Our Category</h2>
-      
-        <div class="categories">
-          <div>Fiction Books</div>
-          <div>Journals</div>
-          <div>Non-Fiction Books</div>
-          <div>Office Supplies</div>
-          <div>Self-Help</div>
-          <div>Magazines</div>
-        </div>
-        
-      </section>
-
-
-<!-----------Footer------------------------->
-<div id="footer"></div>
-
-
-<script type="module">
-  // Load header and attach its script
-  fetch('/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      import('/header.js');
-    });
-
-  // Load footer and attach its script
-  fetch('/footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer').innerHTML = html;
-      import('/footer.js');
-    });
-</script>
-
-
   
 
 
+  <!----------------------- Header ---------------------->
+  <div id="header"></div>
 
+  <!--------------Header END-------------->
+
+
+
+
+
+  <section id="maincontent">
+    <main>
+      <div class="highlights">
+        <img src="/images/storytelling.jpg" alt="story telling">
+        <div class="overlay-text">
+          <h2>Shop Online at Book Haven</h2>
+          <p>Whether you’re diving into a page-turning novel or exploring an inspiring memoir, we have something for
+            everyone. </p>
+          <button class="explore-button">Explore</button>
+        </div>
+      </div>
+
+      <section class="promo-section">
+        <div class="promo-box">
+          <div class="promo">
+            <h3>New Years Sale </h3>
+            <h2>25% Off</h2>
+            <p>ALL accessories now through the end of the month</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-here-section">
+        <div class="perk-box">
+          <div class="perk">
+            <h3>Your Bookstore</h3>
+            <p>Book Haven Bookstore is a local treasure for book enthusiasts.</p>
+          </div>
+          <div class="perk">
+            <h3>Love You</h3>
+            <p>A deep-rooted commitment to fostering literary exploration and a love for reading.</p>
+          </div>
+          <div class="perk">
+            <h3>Everything You Neeed</h3>
+            <p>High-quality reading materials and office essentials.</p>
+          </div>
+        </div>
+      </section>
+      <br>
+    </main>
+  </section>
+  <section class="promo-section">
+    <div class="promo-box">
+      <div class="promo">
+        <h3>Clearance Items</h3>
+        <h2>50% Off</h2>
+        <p>Up to 50% off clearance books and magazines while supplies last.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="item-section">
+    <div class="item-box">
+      <div class="item">
+        <img src="/images/Client3_Book1.png" alt="story telling">
+      </div>
+      <div class="item-description">
+        <h3>BRIE MINE 4EVER</h3>
+        <p>A book for cheese lovers.</p>
+        <button id="shop-button">Shop Now</button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="category-section">
+    <h2> Shop Our Category</h2>
+
+    <div class="categories">
+      <div>Fiction Books</div>
+      <div>Journals</div>
+      <div>Non-Fiction Books</div>
+      <div>Office Supplies</div>
+      <div>Self-Help</div>
+      <div>Magazines</div>
+    </div>
+
+  </section>
+
+
+  <!-----------Header/Footer------------------------->
+  <div id="footer"></div>
+
+
+  <script type="module">
+    // Load header and attach its script
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+        import('/scripts/header.js');
+      });
+
+    // Load footer and attach its script
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+        import('/scripts/footer.js');
+      });
+  </script>
 </body>
 
 </html>

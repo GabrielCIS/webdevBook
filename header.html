@@ -1,67 +1,48 @@
-
 <!----------------------- Header ---------------------->
-    <header class="headercontainer">
 
-        <div id="burgermenu">
-            <button class="navbar"><i class="fa-solid fa-bars fa-xl"></i> 
+<div class="callout">Free Shipping on orders over $25</div>
 
-                <ul id="burgermenulinks">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/community.html">Community</a></li>
-                </ul>
-            </button>
-            
-        </div>
-        <div class=logo>
-            
-            <a href="/index.html"> <img src="/images/Logo_Name2.png" alt="Book store logo"> </a>
-            
-        </div>
+<header class="headercontainer">
 
-        
+    <div id="burgermenu">
+        <button class="navbar"><i class="fa-solid fa-bars fa-xl"></i>
 
- 
+            <ul id="burgermenulinks">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/community.html">Community</a></li>
+            </ul>
+        </button>
+    </div>
+    <div class=logo>
 
+        <a href="/index.html"> <img src="/images/Logo_Name2.png" alt="Book store logo"> </a>
 
+    </div>
+    <div id="fullmenu">
+        <ul>
+            <li><a href="/index.html">Home</a></Li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/community.html">Community</a></li>
+            <i class="fa-solid fa-magnifying-glass" style="margin-right: 12px;"></i>
+            <i id="cart-icon" class="fa-solid fa-cart-shopping" style="cursor: pointer; margin-right: 8px;"></i>
+            <i class="fa-regular fa-circle-user fa-xl" style="margin-right: 10px;"></i>
+        </ul>
+    </div>
 
-        <div id="mobileuser"> 
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-regular fa-circle-user fa-xl"></i>
-        </div>
+</header>
+<div id="cart-modal" class="modal">
 
-            <div id="fullmenu">
-                <ul>
-                    <li><a href="/index.html">Home</a></Li>
-                    <li><a href="/gallery.html">Gallery</a></li>
-                    <li><a href="/about.html">About</a></li>
-                    <li><a href="/community.html">Community</a></li>
-                    <i class="fa-solid fa-magnifying-glass" style="margin-right: 12px;"></i>
-                    <i id="cart-icon" class="fa-solid fa-cart-shopping" style="cursor: pointer; margin-right: 8px;"></i>
-                    
-
-                    
-                    </div>
-                   
-                    
-                    <i class="fa-regular fa-circle-user fa-xl" style="margin-right: 10px;"></i>
-                </ul>
-            </div>
-            
-    </header>
-    <div id="cart-modal" class="modal">
-      
-        <div class="modal-content">
-          <span class="close" id="close-cart-modal">×</span>
-          <h3>Your Cart</h3>
-          <br>
-          <ul id="cart-items"></ul>
-          <br>
-          <br>
-          <button id="clear-cart-button" class="cart-button">Clear Cart</button>
-          <button id="process-order-button" class="cart-button">Process Order</button>
-        </div>
-<!--------------Header END-------------->
-
+    <div class="modal-content">
+        <span class="close" id="close-cart-modal">×</span>
+        <h3>Your Cart</h3>
+        <br>
+        <ul id="cart-items"></ul>
+        <br>
+        <br>
+        <button id="clear-cart-button" class="cart-button">Clear Cart</button>
+        <button id="process-order-button" class="cart-button">Process Order</button>
+    </div>
+    <!--------------Header END-------------->

@@ -1,31 +1,29 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Bookstore</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
-    <script src="scripts/script.js" defer></script>
+  <title>Bookstore</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
+  <script src="scripts/script.js" defer></script>
 
 
 
 </head>
 
 <body>
- 
-    
-    <div class="callout">Free Shipping on orders over $25</div>
-    
-<!----------------------- Header ---------------------->
-<div id="header"></div>
-
-<!--------------Header END-------------->
 
 
-<br />
+
+  <!----------------------- Header ---------------------->
+  <div id="header"></div>
+
+  <!--------------Header END-------------->
+
+
+  <br />
 
 
   <table class="g-table">
@@ -43,114 +41,118 @@
 
       <tr>
         <td data-label="Image"><img src="/images/Client3_Magazine1.png" alt="Magazine 1"></td>
-        <td data-label="Item" style = "width: 100px;">Ball Magazine</td>
+        <td data-label="Item" style="width: 100px;">Ball Magazine</td>
         <td data-label="Description">Ball Magazine - Is the world in a Pickle?</td>
         <td data-label="Price">$9.99</td>
         <td data-label="Action"><button class="add-to-cart" data-item="Ball Magazine">Add to Cart</button></td>
       </tr>
       <tr>
         <td data-label="Image"><img src="/images/Client3_Magazine2.png" alt="Magazine 2"></td>
-        <td data-label="Item" style = "width: 100px;">Travel Magazine</td>
+        <td data-label="Item" style="width: 100px;">Travel Magazine</td>
         <td data-label="Description">Travel Magazine - Top Ten Places to Travel</td>
         <td data-label="Price">$12.99</td>
-        <td data-label="Action"><button  class="add-to-cart" data-item="Travel Magazine">Add to Cart</button></td>
+        <td data-label="Action"><button class="add-to-cart" data-item="Travel Magazine">Add to Cart</button></td>
       </tr>
       <tr>
         <td data-label="Image"><img src="/images/Client3_Magazine3.png" alt="Magazine 3"></td>
-        <td data-label="Item" style = "width: 100px;">Eat. Magazine</td>
+        <td data-label="Item" style="width: 100px;">Eat. Magazine</td>
         <td data-label="Description">Eat. Magazine - The Breakfast Issue</td>
         <td data-label="Price">$10.99</td>
-        <td data-label="Action"><button  class="add-to-cart" data-item="Eat. Magazine">Add to Cart</button></td>
+        <td data-label="Action"><button class="add-to-cart" data-item="Eat. Magazine">Add to Cart</button></td>
       </tr>
-   
+
     </tbody>
   </table>
-<br />
-<table style="width: 95%;">
-  <tbody>
+  <br />
+  <table style="width: 95%;">
+    <tbody>
 
-    <tr>
-      <td colspan="2" style="text-align: right;">
-        <button id="open-cart-from-gallery" class="add-to-cart">Check Out</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+      <tr>
+        <td colspan="2" style="text-align: right;">
+          <button id="open-cart-from-gallery" class="add-to-cart">Check Out</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-</div>
-
-
+  </div>
 
 
-<!-----------Footer------------------------->
-<div id="footer"></div>
 
 
-<script type="module">
-  async function loadHeaderAndFooter() {
-    // Load HEADER
-    const headerRes = await fetch('/header.html');
-    const headerHtml = await headerRes.text();
-    document.getElementById('header').innerHTML = headerHtml;
+  <!-----------Footer------------------------->
+  <div id="footer"></div>
 
-    // Wait for DOM update
-    await new Promise((resolve) => requestAnimationFrame(resolve));
+  <!---unfortnately this one has to be setup different due to the cart buttons. 
+  - Load the scripts in the appropriate order to allow the cart in the header
+  - Load the modal to allow for the button that pops the modal
+  - Enable add to cart buttons-->
 
-    // Load header script
-    const headerModule = await import('/header.js');
-    if (headerModule?.initHeader) {
-      headerModule.initHeader();
-    }
+  <script type="module">
+    async function loadHeaderAndFooter() {
+      // Load HEADER
+      const headerRes = await fetch('/header.html');
+      const headerHtml = await headerRes.text();
+      document.getElementById('header').innerHTML = headerHtml;
 
-    // Wait until modal + global cart function exists
-    await new Promise(resolve => {
-      const check = () => {
-        if (document.getElementById("cart-modal") && typeof window.openCartModal === "function") {
-          resolve();
-        } else {
-          requestAnimationFrame(check);
-        }
-      };
-      check();
-    });
+      // Wait for DOM update
+      await new Promise((resolve) => requestAnimationFrame(resolve));
 
-    // Hook up gallery checkout button
-    const galleryBtn = document.getElementById("open-cart-from-gallery");
-    if (galleryBtn) {
-      galleryBtn.addEventListener("click", window.openCartModal);
-    }
+      // Load header script
+      const headerModule = await import('/scripts/header.js');
+      if (headerModule?.initHeader) {
+        headerModule.initHeader();
+      }
 
-    // Attach listeners to "Add to Cart" buttons
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");
-    addToCartButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const item = button.getAttribute("data-item");
-        if (item) addToCart(item);
+      // Wait until modal + global cart function exists
+      await new Promise(resolve => {
+        const check = () => {
+          if (document.getElementById("cart-modal") && typeof window.openCartModal === "function") {
+            resolve();
+          } else {
+            requestAnimationFrame(check);
+          }
+        };
+        check();
       });
-    });
 
-    // Load FOOTER
-    const footerRes = await fetch('/footer.html');
-    const footerHtml = await footerRes.text();
-    document.getElementById('footer').innerHTML = footerHtml;
+      // Hook up gallery checkout button
+      const galleryBtn = document.getElementById("open-cart-from-gallery");
+      if (galleryBtn) {
+        galleryBtn.addEventListener("click", window.openCartModal);
+      }
 
-    await new Promise((resolve) => requestAnimationFrame(resolve));
+      // Attach listeners to "Add to Cart" buttons
+      const addToCartButtons = document.querySelectorAll(".add-to-cart");
+      addToCartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          const item = button.getAttribute("data-item");
+          if (item) addToCart(item);
+        });
+      });
 
-    const footerModule = await import('/footer.js');
-    if (footerModule?.initFooter) {
-      footerModule.initFooter();
+      // Load FOOTER
+      const footerRes = await fetch('footer.html');
+      const footerHtml = await footerRes.text();
+      document.getElementById('footer').innerHTML = footerHtml;
+
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+
+      const footerModule = await import('/scripts/footer.js');
+      if (footerModule?.initFooter) {
+        footerModule.initFooter();
+      }
     }
-  }
 
-  // Global addToCart function
-  function addToCart(itemName) {
-    if (!window.cartItems) window.cartItems = [];
-    window.cartItems.push(itemName);
-    sessionStorage.setItem("cartItems", JSON.stringify(window.cartItems));
+    // addToCart function
+    function addToCart(itemName) {
+      if (!window.cartItems) window.cartItems = [];
+      window.cartItems.push(itemName);
+      sessionStorage.setItem("cartItems", JSON.stringify(window.cartItems));
 
-    // Optional: show feedback
-    alert(`Added to cart: ${itemName}`);
-  }
+      // show feedback
+      alert(`Added to cart: ${itemName}`);
+    }
 
-  loadHeaderAndFooter();
-</script>
+    loadHeaderAndFooter();
+  </script>

@@ -2,142 +2,146 @@
 <html>
 
 <head>
-    <title>Bookstore</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
-    <script src="scripts/script.js" defer></script>
+  <title>Bookstore</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9f78cd024f.js" crossorigin="anonymous"></script>
+  <script src="scripts/script.js" defer></script>
 
 
 </head>
 
 <body>
-    
-    <div class="callout">Free Shipping on orders over $25</div>
-    
-<!----------------------- Header ---------------------->
-<div id="header"></div>
 
-<!--------------Header END-------------->
+  <!----------------------- Header ---------------------->
+  <div id="header"></div>
 
-    
-    
-    <div id="header"></div>
+  <!--------------Header END-------------->
 
-    <section>
-        <main>
-            <div class="book-wrapper">
-            <div class="book">
-                <div class="page left-page">
-                  <h4>Preface: This is how we got started</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+  <section>
+    <main>
+      <div class="book-wrapper">
+        <div class="book">
+          <div class="page left-page">
+            <h4>Preface: This is how we got started</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem
+              placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+              Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer
+              nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+              inceptos himenaeos.</p>
+          </div>
+          <div class="page right-page">
+            <h4>Prolog: This is where it began </h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem
+              placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+              Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer
+              nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+              inceptos himenaeos.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <center>
+        <h3>Contact Us</h3>
+      </center>
+
+      <table id="contact">
+        <tr>
+          <th colspan="3" id="contact-title">Hours of Operations</th>
+        </tr>
+        <tr>
+          <td>Mon-Fri</td>
+          <td>8am - 8pm</td>
+        </tr>
+        <tr>
+          <td>Sat</td>
+          <td>8am - 2pm</td>
+        </tr>
+        <tr>
+          <td>Sun</td>
+          <td colspan="2">Closed</td>
+        </tr>
+      </table>
+
+      <br />
+
+      <table width="100%" id="contact">
+        <tr>
+          <th colspan="3" id="contact-title">Get in touch</th>
+        </tr>
+        <tr>
+          <th colspan="3">
+            <div class="form-container">
+              <form id="contactusform">
+                <p>
+                  Use this form to contact us to provide feedback or request a
+                  customer order
+                </p>
+
+                <div class="form-group">
+                  <label>Feedback Type:
+                    <select name="type" id="type" required>
+                      <option value="">Please choose an option</option>
+                      <option value="Feedback">Feedback</option>
+                      <option value="Custom">Custom Order</option>
+                    </select>
+                  </label><br />
+
+                  <label>Full Name:
+                    <input type="text" name="fname" id="fname" required />
+                  </label><br />
+
+                  <label>Phone:
+                    <input type="tel" name="phone" id="phone" />
+                  </label><br />
+
+                  <label>Email:
+                    <input type="email" name="email" id="email" required />
+                  </label><br />
+
+                  <label>Order Number:
+                    <input type="text" name="order" id="order" />
+                  </label><br />
+
+                  <label>Details:
+                    <input type="text" name="feedback" id="feedback" required />
+                  </label><br />
                 </div>
-                <div class="page right-page">
-                  <h4>Prolog: This is where it began </h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-                </div>
+
+                <input type="submit" value="Submit" id="submit-form" />
+                <input type="reset" value="Clear" id="clear-form" />
+              </form>
             </div>
-            </div>
-        </main>    
-        <aside>
-            <center><h3>Contact Us</h3></center>
-      
-            <table id="contact">
-              <tr>
-                <th colspan="3" id="contact-title">Hours of Operations</th>
-              </tr>
-              <tr>
-                <td>Mon-Fri</td>
-                <td>8am - 8pm</td>
-              </tr>
-              <tr>
-                <td>Sat</td>
-                <td>8am - 2pm</td>
-              </tr>
-              <tr>
-                <td>Sun</td>
-                <td colspan="2">Closed</td>
-              </tr>
-            </table>
-      
-            <br />
-      
-            <table width="100%" id="contact">
-              <tr>
-                <th colspan="3" id="contact-title">Get in touch</th>
-              </tr>
-              <tr>
-                <th colspan="3">
-                  <div class="form-container">
-                    <form id="contactusform">
-                      <p>
-                        Use this form to contact us to provide feedback or request a
-                        customer order
-                      </p>
-      
-                      <div class="form-group">
-                        <label>Feedback Type:
-                          <select name="type" id="type" required>
-                            <option value="">Please choose an option</option>
-                            <option value="Feedback">Feedback</option>
-                            <option value="Custom">Custom Order</option>
-                          </select>
-                        </label><br />
-      
-                        <label>Full Name:
-                          <input type="text" name="fname" id="fname" required />
-                        </label><br />
-      
-                        <label>Phone:
-                          <input type="tel" name="phone" id="phone" />
-                        </label><br />
-      
-                        <label>Email:
-                          <input type="email" name="email" id="email" required />
-                        </label><br />
-      
-                        <label>Order Number:
-                          <input type="text" name="order" id="order" />
-                        </label><br />
-      
-                        <label>Details:
-                          <input type="text" name="feedback" id="feedback" required />
-                        </label><br />
-                      </div>
-      
-                      <input type="submit" value="Submit" id="submit-form" />
-                      <input type="reset" value="Clear" id="clear-form" />
-                    </form>
-                  </div>
-                </th>
-              </tr>
-            </table>
-          </aside>
-        </section>
-   
-
-<!-----------Footer------------------------->
-<div id="footer"></div>
+          </th>
+        </tr>
+      </table>
+    </aside>
+  </section>
 
 
-<script type="module">
-  // Load header and attach its script
-  fetch('/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('header').innerHTML = html;
-      import('/header.js');
-    });
+  <!-----------Header/Footer------------------------->
+  <div id="footer"></div>
 
-  // Load footer and attach its script
-  fetch('/footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer').innerHTML = html;
-      import('/footer.js');
-    });
-</script>
+
+  <script type="module">
+    // Load header and attach its script
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+        import('/scripts/header.js');
+      });
+
+    // Load footer and attach its script
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+        import('/scripts/footer.js');
+      });
+  </script>
 
 
 </body>
